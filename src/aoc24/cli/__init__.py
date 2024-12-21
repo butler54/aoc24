@@ -34,6 +34,7 @@ def result(day: int):
             print(f'Part 2 result: {aoc24.days.third.part_two(pathlib.Path('data/2024-12-03.txt'))}')
         case 4:
             print(f'Part 1 result: {aoc24.days.fourth.part_one(pathlib.Path('data/2024-12-04-a.txt'))}')
+            print(f'Part 2 result: {aoc24.days.fourth.part_two(pathlib.Path('data/2024-12-04-a.txt'))}')
         case _:
             return Null
 
