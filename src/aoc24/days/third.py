@@ -6,14 +6,11 @@ import pathlib
 import re
 
 
-
 def part_one(path: pathlib.Path) -> int:
-
     text = path.read_text()
 
-    result = re.findall(r'mul\((\d+),(\d+)\)', text)
+    result = re.findall(r"mul\((\d+),(\d+)\)", text)
     return sum([int(tup[0]) * int(tup[1]) for tup in result])
-
 
 
 def part_two(path: pathlib.Path) -> int:
@@ -22,16 +19,16 @@ def part_two(path: pathlib.Path) -> int:
     matches = re.findall(r"mul\(\d+,\d+\)|do\(\)|don't\(\)", text)
 
     state = 1
-    result = 0 
+    result = 0
     for item in matches:
-        if item[0] == 'm':
-            nums = item[4:-1].split(',')
+        if item[0] == "m":
+            nums = item[4:-1].split(",")
             result += state * int(nums[0]) * int(nums[1])
-        elif item[2] == '(':
+        elif item[2] == "(":
             state = 1
-        elif item[2] == 'n':
+        elif item[2] == "n":
             state = 0
         else:
-            print('WTF')
-    print(result)
+            msg = "WTF"
+            raise Exception(msg)  # noqa: TRY002 can't be bothered
     return result
