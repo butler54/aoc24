@@ -5,14 +5,18 @@
 
 import pathlib
 
+import pytest
+
 import aoc24.days.first
 
 
-def test_first_a(ray_session):
-    result = aoc24.days.first.part_a(pathlib.Path('data/2024-12-01-a.txt.sample'))
+@pytest.mark.usefixtures("ray_session")
+def test_first_a():
+    result = aoc24.days.first.part_a(pathlib.Path("data/2024-12-01-a.txt.sample"))
     assert result == 11
 
 
-def test_first_b(ray_session):
-    result = aoc24.days.first.part_b(pathlib.Path('data/2024-12-01-a.txt.sample'))
+@pytest.mark.usefixtures("ray_session")
+def test_first_b():
+    result = aoc24.days.first.part_b(pathlib.Path("data/2024-12-01-a.txt.sample"))
     assert result == 31

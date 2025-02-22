@@ -10,7 +10,7 @@ name = "aoc24"
 dynamic = ["version"]
 description = 'advent of code 2024'
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.8, <=3.12"
 license = "Apache-2.0"
 keywords = ['ray', 'advent of code']
 authors = [
@@ -49,6 +49,11 @@ aoc = "aoc24.cli:cli"
 
 [tool.hatch.version]
 path = "src/aoc24/__about__.py"
+
+
+[[tool.hatch.envs.test.matrix]]
+python = ["3.12"]
+
 
 [tool.hatch.envs.types]
 extra-dependencies = [
