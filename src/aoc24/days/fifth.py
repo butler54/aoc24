@@ -56,6 +56,7 @@ def correctly_sorted(sample: list[int], predicates: list[tuple[int, int]]) -> bo
     return True
 
 
+
 def part_one(path: pathlib.Path) -> int:
     tuples, lists = read_file(path)
     sumation = 0

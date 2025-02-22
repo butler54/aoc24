@@ -2,19 +2,19 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 import pathlib
-from typing import Annotated
+from typing import Annotated, Optional
 
 import num2words
 import ray
 import typer
 from rich import print
 
-import aoc24.days.fifth
+
 import aoc24.days.first
-import aoc24.days.fourth
 import aoc24.days.second
 import aoc24.days.third
-
+import aoc24.days.fourth
+import aoc24.days.fifth
 
 def cli():
     """Wrapper CLI command"""
@@ -33,11 +33,15 @@ def result(day: int) -> None:
             print(f'Part 1 result: {aoc24.days.third.part_one(pathlib.Path("data/2024-12-03.txt"))}')
             print(f'Part 2 result: {aoc24.days.third.part_two(pathlib.Path("data/2024-12-03.txt"))}')
         case 4:
-            print(f'Part 1 result: {aoc24.days.fourth.part_one(pathlib.Path("data/2024-12-04-a.txt"))}')
-            print(f'Part 2 result: {aoc24.days.fourth.part_two(pathlib.Path("data/2024-12-04-a.txt"))}')
+            print(f'Part 1 result: {aoc24.days.fourth.part_one(pathlib.Path('data/2024-12-04-a.txt'))}')
+            print(f'Part 2 result: {aoc24.days.fourth.part_two(pathlib.Path('data/2024-12-04-a.txt'))}')
         case 5:
             print(f'Part 1 result: {aoc24.days.fifth.part_one(pathlib.Path("data/2024-12-05.txt"))}')
             print(f'Part 2 result: {aoc24.days.fifth.part_two(pathlib.Path("data/2024-12-05.txt"))}')
+        case 6:
+            print(f'Part 1 result: {aoc24.days.sixth.part_one(pathlib.Path('data/2024-12-06.txt'))}')
+            print(f'Part 1 result: {aoc24.days.fourth.part_one(pathlib.Path("data/2024-12-04-a.txt"))}')
+            print(f'Part 2 result: {aoc24.days.fourth.part_two(pathlib.Path("data/2024-12-04-a.txt"))}')
         case _:
             print("Unknown day {day}")
 
