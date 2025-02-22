@@ -2,4 +2,10 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 fmt:
-  hatch fmt
+	hatch fmt
+
+test:
+	hatch test
+
+test_pytest:
+	PYTHONPATH="$(shell pwd)/src" pytest

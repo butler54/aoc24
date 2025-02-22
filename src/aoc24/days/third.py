@@ -6,7 +6,6 @@ import pathlib
 import re
 
 
-
 def part_one(path: pathlib.Path) -> int:
 
     text = path.read_text()
@@ -22,7 +21,7 @@ def part_two(path: pathlib.Path) -> int:
     matches = re.findall(r"mul\(\d+,\d+\)|do\(\)|don't\(\)", text)
 
     state = 1
-    result = 0 
+    result = 0
     for item in matches:
         if item[0] == 'm':
             nums = item[4:-1].split(',')

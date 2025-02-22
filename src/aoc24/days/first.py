@@ -2,8 +2,9 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 import pathlib
+
 import modin.pandas as pd
-import ray
+
 
 def sort_series(col: pd.Series) -> pd.Series:
     return col.sort_values(ascending=True).reset_index(drop=True)
@@ -11,15 +12,15 @@ def sort_series(col: pd.Series) -> pd.Series:
 
 
 def part_a(data_path: pathlib.Path) -> int:
-    df = pd.read_table(data_path, sep = '\s+', header=None)
+    df = pd.read_table(data_path, sep = r'\s+', header=None)
     new_df = pd.DataFrame({col: sort_series(df[col]) for col in df.columns})
     result = abs(new_df[0] - new_df[1])
-    
+
     return result.sum()
 
 
 def part_b(data_path: pathlib.Path) -> int:
-    df = pd.read_table(data_path, sep = '\s+', header=None)
+    df = pd.read_table(data_path, sep = r'\s+', header=None)
     print(df)
     series = list(df[1])
     print(series)

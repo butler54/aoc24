@@ -1,18 +1,20 @@
 # SPDX-FileCopyrightText: 2024-present Chris Butler <chris@thebutlers.me>
 #
 # SPDX-License-Identifier: Apache-2.0
-import typer
-import ray
-import num2words
 import pathlib
 from typing import Annotated, Optional
+
+import num2words
+import ray
+import typer
+from rich import print
+
 import aoc24.days.first
+import aoc24.days.fourth
 import aoc24.days.second
 import aoc24.days.third
-import aoc24.days.fourth
+import aoc24.days.sixth
 from aoc24.__about__ import __version__
-
-from rich import print
 
 
 def cli():
@@ -35,6 +37,8 @@ def result(day: int):
         case 4:
             print(f'Part 1 result: {aoc24.days.fourth.part_one(pathlib.Path('data/2024-12-04-a.txt'))}')
             print(f'Part 2 result: {aoc24.days.fourth.part_two(pathlib.Path('data/2024-12-04-a.txt'))}')
+        case 6:
+            print(f'Part 1 result: {aoc24.days.sixth.part_one(pathlib.Path('data/2024-12-06.txt'))}')
         case _:
             return Null
 

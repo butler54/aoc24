@@ -5,6 +5,7 @@ import pathlib
 
 import aoc24.days.third
 
+
 def test_part_one(ray_session):
     """"""
     result = aoc24.days.third.part_one(pathlib.Path('data/2024-12-03.txt.sample'))

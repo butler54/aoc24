@@ -7,9 +7,6 @@ import pathlib
 import aoc24.days.second
 
 
-
-
-
 def test_part_one(ray_session):
     result = aoc24.days.second.part_one(pathlib.Path('data/2024-12-02.txt.sample'))
     assert result == 2

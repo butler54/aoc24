@@ -4,6 +4,7 @@
 
 import pathlib
 
+
 def xmas_search(lines, x, y) -> int:
     count = 0
     x_size = len(lines)
@@ -13,14 +14,14 @@ def xmas_search(lines, x, y) -> int:
     for aa in [-1, 0, 1]:
         for bb in [-1 , 0 , 1]:
             if aa == 0 and bb == 0:
-                continue 
+                continue
             sample = ''
             for cc in range(4):
                 new_x = x + aa * cc
                 new_y = y + bb * cc
                 # don't wrap
                 if new_x < 0 or new_y < 0 or new_x >=  x_size or new_y >= y_size:
-                    continue 
+                    continue
                 sample += lines[new_x][new_y]
             if sample == 'XMAS':
                 count += 1
@@ -42,7 +43,7 @@ def part_one(path: pathlib.Path) -> int:
         for jj in range(len(lines[0])):
             if lines[ii][jj] == 'X':
                 xs += xmas_search(lines, ii, jj)
-    
+
 
 
     return xs
