@@ -9,12 +9,12 @@ import ray
 import typer
 from rich import print
 
-
+import aoc24.days.fifth
 import aoc24.days.first
+import aoc24.days.fourth
 import aoc24.days.second
 import aoc24.days.third
-import aoc24.days.fourth
-import aoc24.days.fifth
+
 
 def cli():
     """Wrapper CLI command"""

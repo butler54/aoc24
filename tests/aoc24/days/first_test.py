@@ -5,9 +5,8 @@
 
 import pathlib
 
-import pytest
-
 import aoc24.days.first
+import pytest
 
 
 @pytest.mark.usefixtures("ray_session")

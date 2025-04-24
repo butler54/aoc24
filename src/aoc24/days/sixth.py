@@ -2,8 +2,9 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-import pathlib
 import enum
+import pathlib
+
 import numpy as np
 
 
@@ -35,7 +36,7 @@ class Cell(StringInterpretationEnum):
 
 
 
-class MapMover():
+class MapMover:
 
     rotate = np.array([[0, 1], [-1, 0]])
     def __init__(self, path: pathlib.Path):
@@ -48,7 +49,7 @@ class MapMover():
         for row in range(self.rows):
             row_data = []
             for column in range(self.columns):
-                try: 
+                try:
                     row_data.append(Cell.from_str(lines[row][column]))
                 except ValueError:
                     row_data.append(Cell.VISITED)
@@ -63,7 +64,7 @@ class MapMover():
                     elif direction_str == 'v':
                         self.direction = np.array(Direction.south.value)
             self.array.append(row_data)
-                
+
     def step(self) -> bool:
         next_loc = self.location + self.direction
         if self.outside(next_loc):
@@ -85,7 +86,8 @@ class MapMover():
         unique_locs = 0
         previous_locations = []
         while True:
-            
+            pass
+
             # step through to test step
             # check if next is an existing block, if so skip
             # check if it's in the previous blocks - assume it has to be added first - fi so skip
@@ -108,16 +110,16 @@ class MapMover():
             return True
 
         return False
- 
 
-    
+
+
     def run(self) -> int:
         outside = False
         while not outside:
             outside = self.step()
             print(f'Step, current count {self.count()}')
         return self.count()
-    
+
     def count(self) -> int:
         count = 0
         for row in range(self.rows):
